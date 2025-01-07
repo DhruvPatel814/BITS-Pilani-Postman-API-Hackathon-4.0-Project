@@ -16,6 +16,12 @@ header {
     text-align: center;
 }
 
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -41,6 +47,49 @@ section {
 
 h2 {
     color: rgba(74, 20, 140, 1);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1;
+    margin-right: 20px;
+    background: rgba(255, 255, 255, .75); /* Keep previous background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Keep previous shadow */
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-container input, .form-container select, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 1); /* Keep previous border */
+}
+
+.form-container button {
+    background-color: rgba(142, 36, 170, .9); /* Keep previous button color */
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: rgba(123, 31, 162, .9); /* Keep previous hover color */
+}
+
+.map-container {
+    flex: 1;
+    height: 400px;
+    background-color: rgba(244, 244, 244, 1); /* Keep previous background */
 }
 
 /* Specific styles for the appointment section */
