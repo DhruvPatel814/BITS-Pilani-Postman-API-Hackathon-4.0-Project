@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Hospital Name</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <form action="submit_appointment.php" method="POST">
+            <div class="form-row">
+                <div>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" required onchange="updateDoctors()">
+                        <option value="">Select a Department</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="dermatology">Dermatology</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="doctor">Doctor:</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="">Select a Doctor</option>
+                        <!-- Options will be populated based on the selected department -->
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hospital Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function updateDoctors() {
+            const department = document.getElementById('department').value;
+            const doctorSelect = document.getElementById('doctor');
+            doctorSelect.innerHTML = ''; // Clear existing options
+    
+            let doctors = [];
+    
+            switch (department) {
+                case 'cardiology':
+                    doctors = ['Dr. Smith', 'Dr. Johnson', 'Dr. Lee'];
+                    break;
+                case 'neurology':
+                    doctors = ['Dr. Brown', 'Dr. Wilson', 'Dr. Taylor'];
+                    break;
+                case 'orthopedics':
+                    doctors = ['Dr. Davis', 'Dr. Miller', 'Dr. Anderson'];
+                    break;
+                case 'pediatrics':
+                    doctors = ['Dr. Thomas', 'Dr. Jackson', 'Dr. White'];
+                    break;
+                case 'dermatology':
+                    doctors = ['Dr. Harris', 'Dr. Martin', 'Dr. Thompson'];
+                    break;
+                default:
+                    doctors = [];
+            }
+    
+            // Populate the doctor dropdown
+            doctors.forEach(doctor => {
+                const option = document.createElement('option');
+                option.value = doctor;
+                option.textContent = doctor;
+                doctorSelect.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>
