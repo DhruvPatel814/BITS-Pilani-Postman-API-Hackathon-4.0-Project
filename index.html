@@ -3,48 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Services</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <title>Medical</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* Full page background */
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            font-size: 14px;
+            border-bottom: 2px solid #ffffff; /* Adds white separator under the top bar */
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn-appointment {
+            background-color: white;
+            color: #1a237e;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            gap: 20px;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            color: #1a237e;
+        }
+
+        .content span {
+            color: #673ab7; /* Purple shade for "A Casual Heathcall" */
+        }
+
+        .btn-register {
+            background-color: #673ab7; /* Purple button background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            text-decoration: none; /* Makes it look like a button */
+            display: inline-block; /* Ensures button style works for <a> */
+        }
+
+        .btn-register:hover {
+            background-color: #512da8; /* Darker purple on hover */
+        }
+
+        /* Image Styling */
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 5px solid #1a237e; /* Adds the dark blue border to the image */
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a237e;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Box Shadow for Content */
+        .main-content {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds slight shadow to the content section */
+            border: 1px solid #ddd; /* Light grey border for the main content */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Hospital Name</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
+    <header class="header">
+        <div class="top-bar">
+            <span>EMERGENCY <a href="tel:+237681812255" style="color: white;">(237) 681-812-255</a></span>
+            <span>WORK HOUR 09:00 - 20:00 Everyday</span>
+            <span>LOCATION 0123 Some Place</span>
+        </div>
+        <nav class="nav">
+            <div class="logo">MEDICAL</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="appointment.html">Book Appointment</a></li> <!-- Link to appointment page -->
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <!-- <li><a href="appointment.html">Appointment</a></li> -->
+                <li><a href="lab-records.html">Lab Records</a></li>
             </ul>
+            <button class="btn-appointment">Appointment</button>
         </nav>
     </header>
-
-    <section id="home">
-        <h2>Welcome to Our Hospital</h2>
-        <p>Your health is our priority. Register now for a free checkup!</p>
-        <a href="appointment.html" class="button">Register Now</a> <!-- Link to appointment page -->
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Free Checkup</li>
-            <li>Cardiogram</li>
-            <li>DNA Testing</li>
-            <li>Blood Bank</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: (237) 681-812-255</p>
-        <p>Email: info@hospitalname.com</p>
-        <p>Location: 0123 Some Place, 9876 Some Country</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2021 Hospital Name. All Rights Reserved.</p>
+    <main class="main-content">
+        <div class="content">
+            <h1>MEDICAL: <span>A Casual Heathcall with Professionals</span></h1>
+            <p>Please register to be a part of the event.</p>
+            <!-- Updated Register Now Button with Link -->
+            <a href="registration.html" class="btn-register">Register Now</a>
+        </div>
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7cJWK9TFL-SW8iDGYPr8xzXHzZ0-kiDRnUlbCwa5IwY9xGl5mdYPKnr8E7yn7jn4ebD8&usqp=CAU" alt="Heart Illustration">
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2021 Hospital's name All Rights Reserved by PNTEC-LTD</p>
     </footer>
 </body>
 </html>
